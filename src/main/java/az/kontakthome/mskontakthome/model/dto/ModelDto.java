@@ -12,4 +12,5 @@ import lombok.NoArgsConstructor;
 public class ModelDto {
     private Long id;
     private String name;
+    private SubMenuDto subMenuDto;
 }
