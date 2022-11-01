@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create models table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: models
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of model
+              - column:
+                  name: name
+                  type: varchar(128)
+                  remarks: name of model
+                  constraints:
+                    nullable: false
+              - column:
+                  name: menu_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_models_sub_menus
+                    references: sub_menu(id)
+                    nullable: false
+                  remarks: id of sub_menus
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: creation date of record
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: update date of record
+
+            remarks: Table to store information about models
