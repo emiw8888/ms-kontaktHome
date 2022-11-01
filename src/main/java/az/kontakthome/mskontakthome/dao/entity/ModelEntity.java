@@ -19,8 +19,8 @@ public class ModelEntity {
     private Long id;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "menu_id", referencedColumnName = "id")
-    private MenuEntity menuId;
+    @JoinColumn(name = "submenu_id", referencedColumnName = "id")
+    private SubMenuEntity subMenuId;
     @CreationTimestamp
     private LocalDateTime createdAt;
     @UpdateTimestamp

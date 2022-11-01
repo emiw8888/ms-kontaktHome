@@ -24,10 +24,10 @@ databaseChangeLog:
                   name: menu_id
                   type: bigint
                   constraints:
-                    foreignKeyName: fk_models_menus
-                    references: menu(id)
+                    foreignKeyName: fk_models_sub_menus
+                    references: sub_menu(id)
                     nullable: false
-                  remarks: id of menus
+                  remarks: id of sub_menus
               - column:
                   name: created_at
                   type: timestamp
