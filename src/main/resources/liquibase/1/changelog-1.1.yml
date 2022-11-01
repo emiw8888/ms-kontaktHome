@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create sub_menus table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: sub_menu
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of sub_menu
+              - column:
+                  name: product_type
+                  type: varchar(128)
+                  remarks: product_type of sub_menu
+                  constraints:
+                    nullable: false
+              - column:
+                  name: menu_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_sub_menus_menus
+                    references: menu(id)
+                    nullable: false
+                  remarks: id of menus
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: creation date of record
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: update date of record
+
+            remarks: Table to store information about sub_menus

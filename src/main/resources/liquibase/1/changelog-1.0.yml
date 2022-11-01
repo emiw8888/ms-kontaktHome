@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create menus table
+      author: Ravan Hasanzada
+      changes:
+        - createTable:
+            tableName: menu
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of menus
+              - column:
+                  name: product_section
+                  type: varchar(64)
+                  remarks: product_section of menu
+                  constraints:
+                    nullable: false
+              - column:
+                  name: icon
+                  type: varchar(64)
+                  remarks: icon of menu
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: creation date of record
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: update date of record
+
+            remarks: Table to store information about menus
