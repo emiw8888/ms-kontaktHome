@@ -19,7 +19,7 @@ public class ModelEntity {
     private Long id;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "submenu_id", referencedColumnName = "id")
+    @JoinColumn(name = "sub_menu_id", referencedColumnName = "id")
     private SubMenuEntity subMenuId;
     @CreationTimestamp
     private LocalDateTime createdAt;
