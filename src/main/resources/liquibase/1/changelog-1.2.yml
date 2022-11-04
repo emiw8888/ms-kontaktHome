@@ -21,11 +21,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: menu_id
+                  name: sub_menu_id
                   type: bigint
                   constraints:
                     foreignKeyName: fk_models_sub_menus
-                    references: sub_menu(id)
+                    references: sub_menus(id)
                     nullable: false
                   remarks: id of sub_menus
               - column:

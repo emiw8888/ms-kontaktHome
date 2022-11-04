@@ -4,7 +4,7 @@ databaseChangeLog:
       author: Ravan Hasanzada
       changes:
         - createTable:
-            tableName: sub_menu
+            tableName: sub_menus
             columns:
               - column:
                   name: id
@@ -25,7 +25,7 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     foreignKeyName: fk_sub_menus_menus
-                    references: menu(id)
+                    references: menus(id)
                     nullable: false
                   remarks: id of menus
               - column:

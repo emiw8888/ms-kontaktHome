@@ -1,0 +1,146 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create products table
+      author: Emil Cahangirli
+      changes:
+        - createTable:
+            tableName: models
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    remarks: id of product
+              - column:
+                  name: name
+                  type: varchar(128)
+                  remarks: name of product
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_products_models
+                    references: models(id)
+                    nullable: false
+                  remarks: id of models
+              - column:
+                  name: product_code
+                  type: varchar(128)
+                  remarks: code of product
+              - column:
+                  name: product_count
+                  type: integer
+                  remarks: count of product
+              - column:
+                  name: sales_count
+                  type: integer
+                  remarks: sales count of product
+              - column:
+                  name: product_cost
+                  type: integer
+                  remarks: cost of product
+              - column:
+                  name: is_active
+                  type: boolean
+                  remarks: check product is active or not
+              - column:
+                  name: operating_system
+                  type: varchar(32)
+                  remarks: os of product
+              - column:
+                  name: operating_system_version
+                  type: varchar(32)
+                  remarks: version of product's os
+              - column:
+                  name: screen_size
+                  type: varchar(8)
+                  remarks: screen size of product
+              - column:
+                  name: back_camera
+                  type: varchar(32)
+                  remarks: back camera quality of product
+              - column:
+                  name: front_camera
+                  type: varchar(32)
+                  remarks: front camera quality of product
+              - column:
+                  name: cpu_count
+                  type: integer
+                  remarks: cpu count of product
+              - column:
+                  name: sim_card_count
+                  type: integer
+                  remarks: sim card count of product
+              - column:
+                  name: sim_card_type
+                  type: varchar(32)
+                  remarks: sim card type of product
+              - column:
+                  name: processor_name
+                  type: varchar(32)
+                  remarks: processor name of product
+              - column:
+                  name: processor_speed
+                  type: varchar(32)
+                  remarks: processor speed of product
+              - column:
+                  name: processor_type
+                  type: varchar(32)
+                  remarks: processor type of product
+              - column:
+                  name: storage
+                  type: varchar(8)
+                  remarks: storage of product
+              - column:
+                  name: ram
+                  type: varchar(8)
+                  remarks: random-acces memory of product
+              - column:
+                  name: network
+                  type: varchar(4)
+                  remarks: main network type of product
+              - column:
+                  name: display_type
+                  type: varchar(64)
+                  remarks: display type of product
+              - column:
+                  name: security_level
+                  type: varchar(8)
+                  remarks: security level of product
+              - column:
+                  name: product_size
+                  type: varchar(32)
+                  remarks: size of product
+              - column:
+                  name: screen_colors_count
+                  type: bigint
+                  remarks: screen colors count of product
+              - column:
+                  name: video_format
+                  type: varchar(32)
+                  remarks: video format of product
+              - column:
+                  name: bluetooth_version
+                  type: real
+                  remarks: processor type of product
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: creation date of record
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                  remarks: update date of record
+
+            remarks: Table to store information about models
